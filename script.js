@@ -22,13 +22,15 @@ function showitem() {
 nextBtn.addEventListener("click", () => {
   index++;
   showitem();
-  check()
+  check();
 });
 prevBtn.addEventListener("click", () => {
   index--;
   showitem();
-  check()
+  check();
 });
+
+window.onload = showitem();
 
 function check() {
   if (index == pagination) {
@@ -42,4 +44,10 @@ function check() {
     prevBtn.classList.remove("hidden");
   }
 }
-window.onload = showitem();
+
+const xmark = document.getElementById("xmark");
+const blackScreen = document.getElementById("black-screen");
+
+xmark.addEventListener("click", () => {
+  blackScreen.remove();
+});
